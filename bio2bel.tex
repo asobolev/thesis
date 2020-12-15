@@ -1,0 +1,145 @@
+\chapter{Bio2BEL}
+\label{ch:bio2bel}
+
+\section{Background on Bio2RDF}
+
+An outline was proposed as early as 1995 for integrating data in the biomedical domain that involved transforming data into a common model, aligning semantically related objects, integrating schemata, and federating data \cite{Davidson1995}. \ac{RDF} has the faculty to address these concerns, and were ultimately realized with the Bio2RDF project, in which multiple biological databases and knowledge bases were serialized to RDF for later integration \cite{Belleau2008}.
+
+As stated before, the expressive power of RDF is counteracted by its lack of domain specificity. While it can be used as an interchange format, it still requires converters to formats for which analytical pipelines have already been developed. Furthermore, the suite of conversion scripts are written in PHP, which has very little traction in the bioinformatics community and therefore is difficult to integrate in pre-existing workflows. This section presents Bio2BEL: a project similar to Bio2RDF for the BEL community to directly the usage of the other tools presented in this thesis.
+
+\section{Generation of Namespace Resources}
+
+There are multiple granularities at which a terminology can be modeled. At the lowest is a vocabulary, in which each term is enumerated and described. Higher is a taxonomy, in which hierarchical relations are expressed. At the highest granularity is an ontology, which contains arbitrary and complex relations.
+
+While it is not the primary goal of knowledge modeling, ontologies can also represent cross-references that connect multiple terminologies that describe the same entities. The most common model for representing ontologies is \ac{OWL} which most commonly uses \ac{RDF} as an interchange format, whose main goal is to provide a platform for semantic integration. This immediately provides ontologies with the facilities developed to support semantic data integration. This is very important in the biomedical domain as rapidly progressing technology frequently results in new experiments and new language for describing biological phenomena.
+
+OWL, and a more domain-specific variant, \ac{OBO}, have been widely adopted by the biomedical domain to structure terminologies and enable semantic integration across knowledge and data sources \cite{Smith2007}. Multiple tools for storing, disseminating, and searching them have been including the Brenda Ontology Explorer \cite{brendaontologyexplorer}, BioPortal \cite{Whetzel2011}, OBO Foundry \cite{Smith2007}, and the EBI \ac{OLS} \cite{Cote2006}.
+
+The semantics of the \ac{BEL} require entities to be identified with a name linked to a namespace. The original framework for handling \ac{BEL} Scripts also provided scripts for gathering different resources (vocabularies, taxonomies, and ontologies) in varying formats and assembling them in a specific namespace file format. One of the advantages of BEL over other systems biology modeling languages is its ability to model knowledge across modes and scales. As it is used to describe new phenotypes, such as the domain of psychiatry, new namespaces must be identified and formatted. Below, two approaches for building new namespaces are described.
+
+\subsection{Direct Generation of Namespace Resources}
+
+The OpenBEL Consortium distributed several scripts that included directives and parsers for acquiring data from multiple knowledge bases and databases and structuring them to BEL namespaces in a reproducible manner. Often, this is necessary to acquire identifiers that are not exported to a standard format like OWL or OBO. Additional scripts were written to improve the reliability of these generators and to convert new namespaces summarized in Table 4.
+
+\begin{table}
+\centering
+\caption[Direct Namespace Generation]{Data sources for which reusable BEL namespace conversion scripts have been implemented}
+\label{tab:direct_namespace_generation}
+\def\arraystretch{1.2}
+\begin{tabular}{p{5cm} p{10cm}}
+Data Source & Description \\
+\hline
+FlyBase & Drosophila genes and gene products \\
+HGNC & Human genes and gene products \\
+HGNC Gene Families & Human gene families \\
+InterPro & Protein families, domains, and binding sites \\
+ChEBML & Experiments describing the effects of chemicals on proteins \\
+MeSH Psychiatry and Psychology & A taxonomy of concepts from psychiatry and psychology  \\
+dbSNP & \ac{SNP}s \\
+miRBase & Premature and mature \ac{miRNA} sequences
+\end{tabular}
+\end{table}
+
+\subsection{Indirect Generation of Namespace Resources}
+
+BEL namespaces are not generally useful for curators or text-mining platforms to perform named entity recognition. The data sources from which BEL namespaces can be derived often have other rich information (synonyms, hierarchies, and cross-references) that could be structured into an ontology that is more generally useful. 
+
+Some of the namespaces that were originally generated directly by the OpenBEL Framework are derived from ontologies. Since the development of this pipeline, the aforementioned services for hosting ontologies have gained popularity. The \ac{OLS} provides a programmatic \ac{API} from which the terms in a given ontology can be accessed. The source code for this service is available and can be hosted locally. 
+
+The indirect approach uses data sources to build ontologies that can be hosted in \ac{OLS} then to use the \ac{OLS} \ac{API} to iterate over the terms' labels in order to easily convert any ontology to a BEL namespace with a reusable procedure. Already, namespaces in Table 5 have been generated from the publicly available \ac{OLS}. 
+
+\begin{table}
+\centering
+\caption[OLS-Mediated Namespace Generation]{Ontologies deployed in the OLS from which BEL namespaces have been generated.}
+\label{tab:indirect_namespace_generation}
+\def\arraystretch{1.2}
+\begin{tabular}{p{6cm} p{8cm}}
+Ontology & Description \\
+\hline
+Human Phenotype Ontology & Clinical and phenotypic abnormalities \\
+Uber Anatomy Ontology & Anatomical structures in animals
+\end{tabular}
+\end{table}
+
+As a proof of concept, the data sources in Table 6 have been downloaded and converted to an ontology, deployed on a local \ac{OLS} instance, and converted indirectly to a BEL namespace.
+
+\begin{table}
+\centering
+\caption[Indirect Namespace Generation]{Data sources from which ontologies have been generated, deployed, and used to generate BEL namespaces.}
+\label{tab:indirect_ols_namespace_generation}
+\def\arraystretch{1.5}
+\begin{tabular}{p{6cm} p{8cm}}
+Data Source & Description \\
+\hline
+\ac{UniProt} & Proteins \\
+miRBase & Premature and mature \ac{miRNA} sequences
+\end{tabular}
+\end{table}
+
+\subsection{Distribution of Namespace Resources}
+
+Each method for downloading, parsing, and generating a namespace is stored as its own self-contained Python package. They share common methods for interacting with the \ac{OLS} in the \verb|ols-client| package. Finally, resources are uniformly deployed and distributed with Artifactory \cite{artifactory}. Common code for uploading to Artifactory is included in PyBEL-Tools. 
+
+\subsection{Discussion Related to Resources}
+
+Not all data sources are amenable to the indirect approach. Infamously, the \ac{MeSH} is a thorough data source that was not developed to accomplish the same goals as ontologies. Therefore, it is incredibly difficult task to map its data to an ontology. Furthermore, the implicit solution to semantic integration that relied on ontologies is not generally applicable. In these scenarios, it is not only necessary to generate a namespace, but also mappings. Previous efforts have relied on lookup tables, but like BEL namespaces, are not generally reusable.
+
+Using ontologies to build namespaces implicitly solves the technical problem of mapping terms from one terminology to another, but this does not necessarily generally solve the biological problem. Mappings between identifiers may have different validity for different applications. While it is often convenient for biological literature to name proteins by their genes' names, this can create ambiguity for genes that produce multiple products in the cases of differential splicing and post-transcriptional modification. For example, in some simplistic domains, it is possible to map HGNC gene identifiers to \ac{UniProt} protein identifiers. However, when modeling complex phenotypes that rely on this mechanism, this mapping cannot be used.
+
+\section{Knowledge Integration}
+
+Knowledge can be represented as statements each consisting of a subject, predicate, and object. As knowledge is assembled, the object of one statement may be the subject of another. This process implicitly builds a knowledge network over which reasoning and inference may be performed. Two general purpose technical solutions for storing statements are relational databases and \ac{RDF}.
+
+A relational database allows for similar statements, often ones with the same types of subjects, same types of objects, and same predicates, to be stored in tables. Each row represents one statement, where the subject and the object are assigned a column and additional columns can represent the metadata associated with the assertion of the statement. While their structure is explicitly, relational databases have the disadvantage of becoming large and complicated when representing many types of knowledge. As a result, many knowledge bases are disparate. Further, the management systems underlying relational databases are generally not amenable to federation.
+
+One solution to this problem is to expose the database through \ac{API}s that can be queried from external services to enable federation of multiple relational databases. A popular solution is the \ac{REST} \ac{API}, but to integrate many data sources might require multiple queries, which can put a strain on technical systems. A newer solution is \ac{GraphQL}, which attempts to provide an abstraction layer between relational databases and \ac{REST} \ac{API}s to handle federation more efficiently.
+
+An alternative medium to relational databases entirely is \ac{RDF}, in which all statements are explicitly stored as triplets of subject, predicate, and object in an alternative database management system called a triple-store. The underlying data can be exposed with a \ac{SPARQL} endpoint, which enables the statements to be queried. Further, it directly enables path queries to enable reasoning and inference. \ac{RDF} was developed to enable federation directly using \ac{SPARQL} endpoints from multiple data sources. It also does not need a well-defined schema in the same way a relational database does. This is both a blessing and a curse; new data can be added quickly, but the lack of structure makes it both technically and pedagogically difficult to make pointed queries.
+
+\subsection{Utility of Biological Expression Language}
+Because relational databases and \ac{RDF} are general solution for storing knowledge, they are unaware of the domain-specific needs of knowledge representation and storage in the biomedical domain. Among other modeling languages and formats for systems and networks biology, \ac{BEL} is an apt medium for storing structured knowledge extracted from the literature because it enables inference and reasoning over varying topologies of the resulting networks and also a serialization format for structured knowledge bases to enable integration in a domain-specific medium. It is a solution to overcoming the technical limits imposed by RDF on representing relation metadata and the technical limits imposed by relational databases in constructing and querying networks.
+
+BEL is commonly used for manual curation in a specific disease area. Integrating prior knowledge sources to these networks provides context not only to assist the curator in their understanding of the biological knowledge surrounding their curation, but also allows for automatic enrichment, improved reasoning, and a further step towards building a support system for data interpretation. 
+
+Among the most easily integrable structured knowledge formats in BEL are taxonomies, ontologies, and networks. Taxonomies and ontologies directly provide the facility for reasoning and inferences of new knowledge. Networks, such as bipartite \ac{SNP}-disease, chemical-gene, or gene-pathway networks, can be directly integrated in \ac{BEL}. Even networks created by statistical calculations can be added to \ac{BEL} networks to investigate their explanatory power. For example, the \ac{eSNPO} provides statistical associations between \ac{SNP}s and \ac{GO} biological processes. While these don't have mechanistic support, they can provide additional insight and allow for more informed hypothesis triage in network analysis. Here, two approaches for serializing structured knowledge sources to \ac{BEL} are described.
+
+\subsection{Direct Generation of Knowledge Resources}
+
+While structured, the formats in which knowledge is stored varies by domain. For example, ChEBML \cite{Gaulton2012} is distributed as a relational database, while BKMS-react \cite{Schomburg2017} uses a table with specifically formatted entries to describe reactions. For each source in Table 7, a reusable Python library that downloads, structures, queries, and serializes \ac{BEL} was developed.
+
+\begin{table}
+\centering
+\caption[Direct Knowledge Resource Generation]{Knowledge bases for which reproducible BEL serialization procedures were implemented.}
+\label{tab:direct_knowledge_generation}
+\def\arraystretch{1.5}
+\begin{tabular}{p{25mm} p{20mm} p{45mm}}
+Knowledge Source & Type & Description \\
+\hline
+ChEMBL & Relational Database & Chemical inhibition and binding of enzymes \\
+HGNC Orthologies & Tabular & Gene orthology mappings between human, rat, and mouse \\
+BKMS-react & Tabular & Biochemical reactions and catalytic enzymes \\
+\ac{eSNPO} & Tabular & Relations between \ac{SNP}s and biological processes
+\end{tabular}
+\end{table}
+
+\subsection{Indirect Generation of Knowledge Resources}
+
+Serializing knowledge to \ac{BEL} is not generally useful outside of the domain of tools directed towards \ac{BEL} networks.  The knowledge bases from which \ac{BEL} can be derived often have other rich information that is not appropriate for \ac{BEL} that could be structured in other knowledge representation models such as \ac{OWL}. For these cases, the parser and serializer were separated in order to build an intermediate relational database. These have the added benefit of being queryable through \ac{SQL} or exposed with RESTful \ac{API}s for large data sets across networks. Finally, these database schemes have the additional benefit of providing a formalism for the knowledge before serializing it to BEL. As a proof of concept, packages have been developed for the parsing, database storage, and BEL serialization for sources listed in Table 8.
+
+\begin{table}
+\centering
+\caption[Indirect Knowledge Resource Generation]{Knowledge bases for which an intermediate solution for downloading, parsing, and modeling data were used to facilitate the development of reproducible BEL serialization procedures.}
+\label{tab:indirect_knowledge_generation}
+\def\arraystretch{1.5}
+\begin{tabular}{p{25mm} p{20mm} p{45mm}}
+Knowledge Source & Type & Description \\
+\hline
+Comparative Toxicogenomics Database & \ac{XML} & Relations between chemicals, genes, pathways, and phenotypes \\
+InterPro & Hierarchy & Protein Family Hierarchies \\
+HGNC Gene Families & Tabular & Gene Family Hierarchies
+\end{tabular}
+\end{table}
+
+\subsection{Discussion Related to Knowledge Resources}
+
+Many more knowledge bases and data sources exist that could be integrated with \ac{BEL}. For example, \ac{miRNA}-Target interactions stored in mirTarBase \cite{Chou2016} could provide insight to the complex regulation patterns that applies to complex diseases. Other sources of knowledge could be extracted from data-mining pipelines, such as linkage disequilibrium block analysis, gene co-expression analysis, and perturbagen-based differential gene expression analyses to provide additional support to elucidate mechanistic insight from increasingly complicated and large knowledge assemblies.

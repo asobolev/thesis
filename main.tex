@@ -1,0 +1,377 @@
+%template taken from
+%University of Bonn Master of Life Science Informatics
+% arara: pdflatex: { synctex: on }
+
+\documentclass[twoside, 12pt,  footinclude=true,  headinclude=true,  cleardoublepage=empty]{scrbook}
+
+\usepackage[utf8]{inputenc}
+\usepackage [english] {babel}
+
+\usepackage[]{biblatex}
+\addbibresource{references.bib}
+
+\usepackage{lipsum}
+\usepackage[linedheaders,parts,pdfspacing]{classicthesis}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{indentfirst}
+\usepackage [T1]{fontenc}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{tikz}
+\usepackage[toc,page]{appendix}
+\usepackage{MnSymbol}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage{enumerate}
+\usepackage{csquotes}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{acro}
+\usepackage[a4paper,includeall,bindingoffset=20mm,margin=2cm,marginparsep=0cm,marginparwidth=0cm]{geometry}
+\usepackage[font={footnotesize,it}, labelfont=bf]{caption}
+
+\DeclareAcronym{AD}{
+	short = AD ,
+	long  = Alzheimer's disease
+}
+\DeclareAcronym{API}{
+	short = API ,
+	long  = Application Programming Interface
+}
+\DeclareAcronym{BioPAX}{
+	short = BioPAX,
+	long  = Biological Pathway Exchange Language
+}
+\DeclareAcronym{BEL}{
+	short = BEL,
+	long  = Biological Expression Language
+}
+\DeclareAcronym{BELIEF}{
+	short = BELIEF,
+	long  = Biological Expression Language Information Extraction Workflow
+}
+\DeclareAcronym{BRENDA}{
+	short = BRENDA,
+	long  = Braunschweig Enzyme Database
+}
+\DeclareAcronym{ChEBI}{
+	short = ChEBI,
+	long  = Chemical Entities of Biological Interest
+}
+\DeclareAcronym{CI}{
+	short = CI,
+	long  = Continuous Integration
+}
+\DeclareAcronym{CSV}{
+	short = CSV,
+	long  = Comma Separated Values
+}
+\DeclareAcronym{DL}{
+	short = DL,
+	long  = Descriptive Logic
+}
+\DeclareAcronym{eQTL}{
+	short = eQTL,
+	long  = Expression Quantitative Trait Loci
+}
+\DeclareAcronym{eSNPO}{
+	short = eSNPO,
+	long  = eQTL Single Nucleotide Polymorphism Ontology
+}
+\DeclareAcronym{FCS}{
+	short = FCS,
+	long  = Functional Class Scoring
+}
+\DeclareAcronym{GML}{
+	short = GML,
+	long  = Graph Markup Language
+}
+\DeclareAcronym{GO}{
+	short = GO,
+	long  = Gene Ontology
+}
+\DeclareAcronym{GraphQL}{
+	short = GraphQL,
+	long  = Graph Query Language
+}
+\DeclareAcronym{GRP}{
+	short = GRP,
+	long  = Gene Set File Format
+}
+\DeclareAcronym{GSEA}{
+	short = GSEA,
+	long  = Gene Set Enrichment Analysis
+}
+\DeclareAcronym{HGNC}{
+	short = HGNC,
+	long  = HUGO Gene Nomenclature Committee
+}
+\DeclareAcronym{HTML}{
+	short = HTML,
+	long  = HyperText Markup Language
+}
+\DeclareAcronym{HUGO}{
+	short = HUGO,
+	long  = Human Genome Organization
+}
+\DeclareAcronym{IMI}{
+	short = IMI,
+	long  = International Medicine Initiative
+}
+\DeclareAcronym{INDRA}{
+	short = INDRA,
+	long  = Integrated Dynamical Reasoner and Assembler
+}
+\DeclareAcronym{IRI}{
+	short = IRI,
+	long  = Internationalized Resource Identifier
+}
+\DeclareAcronym{JGIF}{
+	short = JFIG,
+	long  = JSON Graph Interchange Format
+}
+\DeclareAcronym{JSON}{
+	short = JSON,
+	long  = JavaScript Object Notation
+}
+\DeclareAcronym{JSONLD}{
+	short = JSON-LD,
+	long  = JSON Linked Data
+}
+\DeclareAcronym{KEGG}{
+	short = KEGG,
+	long  = Kyoto Encyclopedia of Genes and Genomes
+}
+\DeclareAcronym{MeSH}{
+	short = MeSH,
+	long  = Medical Subject Headings
+}
+\DeclareAcronym{NDEx}{
+	short = NDEx,
+	long  = Network Data Exchange
+}
+\DeclareAcronym{NeuroMMSig}{
+	short = NeuroMMSig,
+	long  = Multimodal Mechanistic Signatures for Neurodegenerative Diseases
+}
+\DeclareAcronym{NPA}{
+	short = NPA,
+	long  = Network Perturbation Amplitude
+}
+\DeclareAcronym{OBO}{
+	short = OBO,
+	long  = Open Biomedical Ontology
+}
+\DeclareAcronym{OLS}{
+	short = OLS,
+	long  = Ontology Lookup Service
+}
+\DeclareAcronym{ORA}{
+	short = ORA,
+	long  = Over Representation Analysis
+}
+\DeclareAcronym{OWL}{
+	short = OWL,
+	long  = Web Ontology Language
+}
+\DeclareAcronym{PD}{
+	short = PD,
+	long  = Parkinson's disease
+}
+\DeclareAcronym{PT}{
+	short = PT,
+	long  = Pathway Topology
+}
+\DeclareAcronym{PTSD}{
+	short = PTSD,
+	long  = Post-traumatic Stress Disorder
+}
+\DeclareAcronym{miRNA}{
+	short = miRNA,
+	long  = Micro-Ribonucleic Acid
+}
+\DeclareAcronym{mRNA}{
+	short = mRNA,
+	long  = Messenger Ribonucleic Acid
+}
+\DeclareAcronym{RCR}{
+	short = RCR,
+	long  = Reverse Causal Reasoning
+}
+\DeclareAcronym{RDF}{
+	short = RDF,
+	long  = Resource Description Format
+}
+\DeclareAcronym{RDFS}{
+	short = RDFS,
+	long  = Resource Description Format Schema
+}
+\DeclareAcronym{REST}{
+	short = REST,
+	long  = Representational State Transfer
+}
+\DeclareAcronym{RNA}{
+	short = RNA,
+	long  = Ribonucleic acid
+}
+\DeclareAcronym{SBML}{
+	short = SBML,
+	long  = Systems Biology Markup Language
+}
+\DeclareAcronym{SIF}{
+	short = SIF,
+	long  = Simple Interaction Format
+}
+\DeclareAcronym{SPARQL}{
+	short = SPARQL,
+	long  = SPARQL Protocol and RDF Query Language
+}
+\DeclareAcronym{SQL}{
+	short = SQL,
+	long  = Structured Query Language
+}
+\DeclareAcronym{SNP}{
+	short = SNP,
+	long  = Single-Nucleotide Polymorphism
+}
+\DeclareAcronym{SST}{
+	short = SST,
+	long  = Sampling of Spanning Trees
+}
+\DeclareAcronym{TBI}{
+	short = TBI,
+	long  = Traumatic Brain Injury
+}
+\DeclareAcronym{UBERON}{
+	short = UBERON,
+	long  = Uber Anatomy Ontology
+}
+\DeclareAcronym{UniProt}{
+	short = UniProt,
+	long  = Universal Protein Resource
+}
+\DeclareAcronym{XML}{
+	short = XML,
+	long  = eXtensible Markup Language
+}
+\DeclareAcronym{XMLS}{
+	short = XMLS,
+	long  = eXtensible Markup Language Schema
+}
+\DeclareAcronym{XGMML}{
+	short = XGMML,
+	long  = eXtensible Graph Markup and Modeling Language
+}
+
+\title{PhD Thesis}
+\author{Andrey Sobolev}
+\date{\today}
+\begin{document}
+	\begin{titlepage}
+		\centering
+		Bonn-Aachen International Center for Information Technology (B-IT)
+
+		University of Bonn
+
+		 Master Programme in Life Science Informatics
+
+		\vspace{1in}
+		 {\Large \bfseries Master's Thesis}
+		\vspace{1in}
+
+		{\LARGE \bfseries PyBEL: a Computational Framework for Biological Expression Language}
+		\vspace{1in}
+
+		{\large Submitted by}
+
+		{\LARGE Charles Tapley Hoyt\par}
+
+		\vspace{1in}
+
+			First Supervisor: Prof. Dr. Martin Hofmann-Apitius
+			\par
+			Second Supervisor: Prof. Dr. Thomas Schultz
+			\par
+			Internal Supervisor: Christian Ebeling
+
+		\vfill
+		In collaboration with the Fraunhofer Institute for Algorithms and Scientific Computing (SCAI)
+		\begin{flushleft}
+			\today
+		\end{flushleft}
+
+	\end{titlepage}
+
+%	% Add blank page
+%	\newpage
+%	\thispagestyle{empty}
+%	\mbox{}
+
+	% /frontmatter -> Turn on roman numbering for the following content and turns off normal numbering
+
+	\frontmatter
+
+\chapter*{Acknowledgment}
+
+\begingroup
+\setlength{\parskip}{1em}
+
+I would like to sincerely thank my supervisors Prof. Dr. Anton Sirota, Prof. Dr. Christian Leibold and Dr. Kay Thurley for hosting me in the lab, providing help and support for scientific and technical questions. I'd like to thank Dr. Dustin Fetterhoff for his contribution with the recorded data to the project. I'd like to thank Dr. Steffen Katzner for his valuable comments on the project during TAC meetings.
+
+I want to thank the Graduate School of Systemic Neurosciences, led by Prof. Dr. Benedikt Grothe for providing a beautiful and productive atmosphere for students, suitable for networking and discussions.
+
+I would like to specially thank Prof. Dr. Thomas Wachtler, my former supervisor in the German Neuroinformatics Node (G-Node), who supported me in acquiring technical and physiological knowledge required for the current research, during the years of working together in G-Node.
+
+My thanks for the great support from my lab, in particular - Dr. Evgeny Resnik, Fabian Stocek, Dr, Andreas Genewsky, Dr. Elena Itchcovich for their help during surgical procedures, animal handling, data acquisition and analysis.
+
+\endgroup
+
+\tableofcontents
+
+\listoffigures
+\listoftables
+
+\chapter*{Abstract}
+Hippocampal cells exhibit preference to be active at a specific place in a familiar environment, enabling them to encode the representation of space within the brain at the population level \cite{Fayyad1996} (O’Keefe, Dostrovsky, 1971). These cells rely on the external sensory inputs and self-motion cues, however, it is still not known how exactly these inputs interact to build a stable representation of a certain location (“place field”). Existing studies suggest that both proprioceptive and other idiothetic types of information are continuously integrated to update the self-position (e.g. implementing “path integration”) while other stable sensory cues provide references to update the allocentric position of self and correct it for the collected integration-related errors. It was shown that both allocentric and idiothetic types of information influence positional cell firing, however in most of the studies these inputs were firmly coupled. The use of virtual reality setups (Thurley, Ayaz, 2016) made it possible to separate the influence of vision and proprioception for the price of not keeping natural conditions - the animal is usually head- or body-fixed (Holscher et al., 2005; Ravassard et al., 2013; Jayakumar et al., 2019, Haas et al., 2019), which introduces vestibular motor- and visual- conflicts, providing a bias for space encoding. Here we use the novel CAVE Virtual Reality system for freely-moving rodents (Del Grosso et al., 2017) that allows to investigate the effect of visual- and positional- (vestibular) manipulation on the hippocampal space code while keeping natural behaving conditions.
+
+In this study, we focus on the dynamic representation of space when the visual-cue-defined and physical-boundary-defined reference frames are in conflict. We confirm the dominance of one reference frame on the other on the level of place fields, when the information about one reference frame is absent (Gothard et al., 2001). We show that the hippocampal cells form adjacent categories by their input preference - surprisingly, not only that they are being driven either by visual / allocentric information or by the distance to the physical boundaries and path integration, but also by a specific combination of both. We found a large category of units integrating inputs from both allocentric and idiothetic pathways that are able to represent an intermediate position between two reference frames, when they are in conflict. This experimental evidence suggests that most of the place cells are involved in representing both reference frames using a weighted combination of sensory inputs. In line with the studies showing dominance of the more reliable sensory modality (Jeffery O’Keefe, 1999; Gothard et al., 2001), our data is consistent (although not proving it) with CA1 cells implementing an optimal Bayesian coding given the idiothetic and allocentric inputs with weights inversely proportional to the availability of the input, as proposed for other sensory systems (Jeffery et al., 2016). This mechanism of weighted sensory integration, consistent with recent dynamic loop models of the hippocampal-entorhinal network (Li, Sheynikhovich et al., 2020), can contribute to the physiological explanation of Bayesian inference and optimal combination of spatial cues for localization  (Cheng et al., 2007).
+
+
+% /frontmatter -> Turn on normal numbering
+\mainmatter
+
+\include{intro}
+
+\include{motivation_goal}
+
+\include{pybel_core}
+
+\include{bio2bel}
+
+\include{pybel_tools}
+
+\include{conclusion}
+
+\printbibliography
+
+\backmatter
+
+\chapter*{Declaration}
+I hereby certify that this material is my own work, that I used only those sources and resources referred to in the thesis, and that I have identified citations as such.
+
+\vspace{0.3in}
+
+\noindent Bonn, \today
+
+\vspace{1in}
+
+\noindent Charles Tapley Hoyt
+
+\end{document}
