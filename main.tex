@@ -2,14 +2,14 @@
 % arara: pdflatex: { synctex: on }
 
 \documentclass[twoside, 12pt,  footinclude=true, headinclude=true, cleardoublepage=empty]{scrbook}
-
 \usepackage[utf8]{inputenc}
-\usepackage [english] {babel}
+\usepackage[english]{babel}
 
 \usepackage[
 backend=biber,
 style=alphabetic,
-citestyle=authoryear
+citestyle=authoryear,
+url=false
 ]{biblatex}
 \addbibresource{references.bib}
 
@@ -40,6 +40,10 @@ citestyle=authoryear
 \usepackage[a4paper,includeall,bindingoffset=20mm,margin=2cm,marginparsep=0cm,marginparwidth=0cm]{geometry}
 \usepackage[font={footnotesize,it}, labelfont=bf]{caption}
 
+% \usepackage{tocloft}
+% \renewcommand\cftchapdotsep{\cftdotsep}
+
+
 \setlength{\parskip}{1em}
 
 \title{PhD Thesis}
@@ -50,35 +54,41 @@ citestyle=authoryear
 
 \begin{titlepage}
 	\centering
-	Bonn-Aachen International Center for Information Technology (B-IT)
 
-	University of Bonn
+	%\vspace{1in}
 
-	 Master Programme in Life Science Informatics
+    \noindent\rule{15cm}{0.4pt}
+    {\linespread{1.5}{\Huge Contribution of the idiothetic and the allothetic information to the hippocampal place code\par}}
+    \noindent\rule{15cm}{0.4pt}
 
-	\vspace{1in}
-	 {\Large \bfseries Master's Thesis}
-	\vspace{1in}
+	{\LARGE \bfseries Andrey Sobolev}
 
-	{\LARGE \bfseries PyBEL: a Computational Framework for Biological Expression Language}
-	\vspace{1in}
+    \includegraphics[width=120mm]{assets/gsn.jpg}
 
-	{\large Submitted by}
+    \includegraphics[width=50mm]{assets/lmu-logo.png}
 
-	{\LARGE Charles Tapley Hoyt\par}
+    Dissertation at the
+    Graduate School of Systemic Neurosciences
+    Ludwig‐Maximilians‐Universität München
 
-	\vspace{1in}
+    December, 2020
 
-		First Supervisor: Prof. Dr. Martin Hofmann-Apitius
-		\par
-		Second Supervisor: Prof. Dr. Thomas Schultz
-		\par
-		Internal Supervisor: Christian Ebeling
+    % ---------------------------
+    \vfill
 
-	\vfill
-	In collaboration with the Fraunhofer Institute for Algorithms and Scientific Computing (SCAI)
 	\begin{flushleft}
-		\today
+	{\large Supervisor:}
+
+	{\LARGE Prof. Dr. Anton Sirota\par}
+
+	\vspace{1in}
+
+	{\large First Reviewer:   \bfseries Prof. Dr. Christian Leibold\par}
+	{\large Second Reviewer:\par}
+	{\large External Reviewer:\par}
+
+    \vspace{1in}
+	{\large \today\par}
 	\end{flushleft}
 
 \end{titlepage}
@@ -92,7 +102,7 @@ citestyle=authoryear
 
 \frontmatter
 
-\chapter*{Acknowledgments}
+\chapter{Acknowledgments}
 
 \begingroup
 \setlength{\parskip}{1em}
@@ -106,6 +116,7 @@ I would like to specially thank Prof. Dr. Thomas Wachtler, my former supervisor 
 My thanks for the great support from my lab, in particular - Dr. Evgeny Resnik, Fabian Stocek, Dr, Andreas Genewsky, Dr. Elena Itchcovich for their help during surgical procedures, animal handling, data acquisition and analysis.
 
 \endgroup
+
 
 \tableofcontents
 

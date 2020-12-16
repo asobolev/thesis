@@ -21,7 +21,7 @@ A total number of 176 place fields showed preference for the visual reference fr
 \begin{figure}
 \captionsetup{format=plain}
 \makebox[\textwidth]{\includegraphics[width=100mm]{figures/F10_VPCs.png}}
-\caption[VPCs]{
+\caption[Visually-driven place cells]{
 Examples of visually-driven place cells. Each plot shows spiking (top) and firing rate maps (bottom) of a single neuron in the original and shifted arena positions. A ruler bar on the left shows schematic representation of the compartments of the (stable) virtual environment. \textbf{(a)} Cell selective for a dark compartment of the virtual environment. \textbf{(b)} Cell showing firing preference only for the initially invisible compartment, available only in the shifted position. \textbf{(c)} Cell selective for the virtual bars that make a virtual boundary inside the arena. \textbf{(d)} Cell showing preference to be active near physical and virtual borders.
 }
 \label{fig:F10_VPCs}
@@ -39,7 +39,7 @@ A significant fraction (n=213, 29\%) of the recorded place fields showed prefere
 \begin{figure}
 \captionsetup{format=plain}
 \makebox[\textwidth]{\includegraphics[width=100mm]{figures/F11_MPCs.png}}
-\caption[MPCs]{
+\caption[Self-motion or boundary-driven place cells]{
 Examples of boundary-driven place cells (2 cells). Each plot shows spiking (top) and firing rate maps (bottom) of a single neuron in the original and shifted arena positions. A ruler bar on the left shows schematic representation of the compartments of the (stable) virtual environment. (a) Cell active in a particular corner of the physical arena only. (b) Place cell showing preference for the upper arena boundary.
 }
 \label{fig:F11_MPCs}
@@ -53,7 +53,7 @@ On the Figure 12 I provide a couple of example cells that have multiple place fi
 \begin{figure}
 \captionsetup{format=plain}
 \makebox[\textwidth]{\includegraphics[width=150mm]{figures/F12_multi_field_cells.png}}
-\caption[Multi-field Cells]{
+\caption[Multi-field place cells]{
 Examples of multi-field place cells (2 cells). Each plot shows the schematic of the experiment (top), spiking (middle) and firing rate maps (bottom) of a single neuron in the original and shifted arena positions in light (A - B) and dark (Ad - Bd) respectively. (a) Example cell having three stable place fields. (b) Example cell having 2 fields locked to the arena reference frame.
 }
 \label{fig:F12_multi_field_cells}
@@ -81,7 +81,7 @@ A small portion (n=44, 6\%) of the recorded units is particularly interesting be
 \begin{figure}
 \captionsetup{format=plain}
 \makebox[\textwidth]{\includegraphics[width=150mm]{figures/F14_multi_modal_cells.png}}
-\caption[Multimodal Cells]{
+\caption[Multimodal place cells]{
 Examples of multisensory cells simultaneously encoding two reference frames. Each plot shows the schematic of the experiment (top), neuron spiking (middle) and firing rate maps of a single neuron in the original and shifted arena positions. (a) Place cell selective for the dark virtual compartment and the lower arena boundary. (b) Cell showing firing preference for the lower arena boundary and some location in the middle of the virtual environment. (c) Place cell selective for the upper arena boundary and also for some virtual location.
 }
 \label{fig:F14_multi_modal_cells}
@@ -95,7 +95,7 @@ Several recorded units exposed specific place or domain selectivity. Figure 15 i
 \begin{figure}
 \captionsetup{format=plain}
 \makebox[\textwidth]{\includegraphics[width=100mm]{figures/F15_specific_cells.png}}
-\caption[Specific Cells]{
+\caption[Specific place cells]{
 Example units showing selectivity to specific virtual landmarks and visual features. Each plot shows firing rate maps of a single neuron in the original and shifted arena positions. (a) Cell representing a mixture of physical and virtual boundaries. Spiking activity near the middle of the arena corresponds to the virtual bars that make a virtual boundary. (b) Cell selective for any place in the virtual environment except a dark compartment.
 }
 \label{fig:F15_specific_cells}
@@ -114,7 +114,7 @@ The mean of the resulting place field distribution appeared at the shift of 0.28
 \begin{figure}
 \captionsetup{format=plain}
 \makebox[\textwidth]{\includegraphics[width=150mm]{figures/F16_proximal_cues_geometry.png}}
-\caption[Proximal Cues define positioning]{
+\caption[Spatial orientation relative to proximal cues]{
 Passive coherent movement of the whole environment (arena + visual projection) does not affect place fields firing. (a) example place cell with 2 place fields. (b) The distribution of the place fields shift between original (A) and shifted (B) conditions is centered near the actual shift of the whole environment, indicating spatial encoding based on the proximal visual cues and arena boundaries. A fraction of outliers might be due to mismatches in the shift detection procedure related with occasional low arena occupancy resulting in inaccurate place field centers.
 }
 \label{fig:F16_proximal_cues_geometry}
@@ -131,13 +131,13 @@ Using the field matching procedure (see place field shift detection), we split d
 \begin{figure}
 \captionsetup{format=plain}
 \makebox[\textwidth]{\includegraphics[width=150mm]{figures/F17_integration_of_sm_inputs.png}}
-\caption[Integration of self-motion inputs]{
-The majority of place cells integrate self-motion inputs. Distribution of place field shifts in darkness (b) is similar to the light periods (a) in non-conflicting sensory conditions. (c) Fractions of place fields that can be tracked between light and dark periods. Only a small percentage of place fields (6.3\%) experience full remapping in darkness, indicating a high probability of integration of self-motion component for single cells.
+\caption[Widespread integration of self-motion inputs]{
+The majority of place cells integrate self-motion inputs. Distribution of place field shifts in darkness (b) is similar to the light periods (a) in non-conflicting sensory conditions. (c) Fractions of place fields that can be tracked between light and dark periods. Only a small percentage of place fields (6.3\%) experience full remapping in darkness, indicating a high probability of integration of self-motion component for single cells, in line with previous reports (\cite{Allen6245}).
 }
 \label{fig:F17_integration_of_sm_inputs}
 \end{figure}
 
-Only a small percentage of place fields (6.3\%) experience full remapping in darkness. The relatively large (7.4 + 16.8 = 24.2\%) percentage of A- or B- only stable cells might be due to the decreased occupancy in the darkness condition (less running time, 4 versus 8 minutes in light) which led to the reduced quality in identification of place fields and false negatives in detection of place fields. Overall, the total domination of stable or partially-stable place fields between light and dark conditions (93.7\%) indicate that the majority of the place cells integrate position estimates based on self-motion inputs given non-conflicting sensory conditions (Figure 17c) and are not affected by the displacement of the arena with respect to the room coordinate system and are not controlled by the room-bound landmarks (mirror, projector, cameras etc).
+A small percentage of place fields (6.3\%) experience full remapping in darkness, which could be attributed to the impaired path integration (\cite{Allen6245}). The relatively large (7.4 + 16.8 = 24.2\%) percentage of A- or B- only stable cells might be due to the decreased occupancy in the darkness condition (less running time, 4 versus 8 minutes in light) which led to the reduced quality in identification of place fields and false negatives in detection of place fields. Overall, the total domination of stable or partially-stable place fields between light and dark conditions (93.7\%) indicate that the majority of the place cells integrate position estimates based on self-motion inputs given non-conflicting sensory conditions (Figure 17c) and are not affected by the displacement of the arena with respect to the room coordinate system and are not controlled by the room-bound landmarks (mirror, projector, cameras etc).
 
 
 \section{Simultaneous encoding of different reference frames}
@@ -148,14 +148,14 @@ To investigate place cell behavior relative to the allocentric and idiothetic in
 \begin{figure}
 \captionsetup{format=plain}
 \makebox[\textwidth]{\includegraphics[width=150mm]{figures/F18_shift_distribution.png}}
-\caption[Shift distribution]{
+\caption[Place field shift distribution in conflict]{
 Place field shift enables classification of the CA1 cells into categories depending on their inputs. (a) Distribution of place field shifts between original (A) and shifted (B) conditions in the VR reference frame. Peak near zero denotes a group of place fields locked to the visual reference frame. Another peak near 0.3m defines fields encoding stable locations relative to the arena reference frame. A peak in the middle shows non-bimodal distribution of spatial selectivity in favor of a weighted integration of sensory inputs. (b) The same distribution as in (a) plotted against the position of the field in the arena in original (A) and shifted (B) conditions. Note the higher concentration of the 0.3 values near arena boundaries (bottom left and top right). (c) Overall classification of all place fields into 4 categories by their shift in conflicting sensory conditions.
 }
 \label{fig:F18_shift_distribution}
 \end{figure}
 
 Using the same shift detection procedure (see methods), the shifts in global (=VR) coordinates of a total of n=729 place fields from 6 animals were obtained from the recorded neural data (see Electrophysiology). The resulting place field shift distribution demonstrates place preference relative to the visual or boundary reference frames along the longitudinal axis, as well as the distribution of place fields along the arena (see Figure 18a). The distribution of place field shifts has 3 peaks around 0, 0.15 and 0.3 meters. On one hand, a non-uniformity of the resulting distribution suggests categorical structure of the underlying firing fields and corresponding neuronal mechanisms. On the other hand, a presence of the large group of place fields (n=246, 33\%) encoding average between reference frames suggests possible continuous weighted integration of visual and self-motion sensory components (see discussion about weighted integration).
-A light domination of the boundary-driven over the visual place representation preference (29\% versus 24\%, cells attributed to each group by having a place field shift of 0.3m (+- ~1 SD = 0.075m) or 0m (+- ~1 SD = 0.075m)) can be explained by the initial larger influence of the boundaries while initially exploring the environment (\cite{Keinath2018}). Another reason can be that the recordings were made from mainly distal, not proximal CA1, which is known to get more input from the mEC representing idiothetic inputs, rather than lEC, better known to provide allothetic sensory information (\cite{Knierim2014}).
+A light domination of the boundary-driven over the visual place representation preference (29\% versus 24\%, cells attributed to each group by having a place field shift of 0.3m (+- ~1 SD = 0.075m) or 0.0m (+- ~1 SD = 0.075m)) can be explained by the initial larger influence of the boundaries while initially exploring the environment (\cite{Keinath2018}). Another reason can be that the recordings were made from mainly distal, not proximal CA1, which is known to get more input from the mEC representing idiothetic inputs, rather than lEC, better known to provide allothetic sensory information (\cite{Knierim2014}).
 
 According to our analysis, a place field shift near 0 m defines a group of place fields, stable relative to the landmarks in the virtual scene during physical arena displacement (24\% cells). This allocentric stability in virtual space could be explained by a profound drive of the hippocampal cells by visual inputs. This type of neurons having fields mainly driven by vision was already established (\cite{Muller1987}; \cite{Chen2013}, \cite{Haas2019}). Another possibility would be that this group of cells receives both visual and self-motion inputs, but the self-motion component is weak and is fully reset by visual landmarks every time the animal appears to be navigating near virtual cues away from the borders. The appropriate evidence for that hypothesis still needs to be found and it is being discussed later in the following chapters.
 
@@ -186,14 +186,14 @@ Balance in concentration of fields of different types (vision versus self-motion
 
 To further investigate the interaction of the hippocampal place cell afferents, we recorded several sessions of the original vSHIFT-physical experiment having a darkness period after the main session time. This allowed to analyse the change in spatial selectivity for place fields, especially the fields driven by a combination of visual- and self-motion inputs, when the visual input together with the whole virtual reference frame are absent. Essentially by looking at the change in cell activity - change in firing rate, field size, field shift or complete re-mapping - we can hypothesize how the reduction of sensory input, in particular, visual information influences place cell binding to a specific reference frame.
 
-For the light periods, place field shift distribution for sessions with darkness is equivalent to the regular shift experiment sessions (see Figure 20a). However, taking the darkness periods alone, all identified place field shifts are centered around 0.28m with no substantial amount of fields near 0m, showing their preference to encode the boundary-defined reference frame (Figure 20b). Intuitively, this is logical: the only way to encode the position in the global (or visual, when the projection is on) reference frame in darkness is to integrate the vestibular information about the arena translation and keep this information intact in relation to the arena borders. This would be unexpected, first, because the information about the passive move is normally not used by the animal to represent the local environment (see the results from vSHIFT - coherent), and second, because there is no clear evidence that path integrator can ever maintain absolute positional information during passive translations based on the vestibular inputs only.
+For the light periods, place field shift distribution for sessions with darkness is equivalent to the regular shift experiment sessions (see Figure 20a). However, taking the darkness periods alone, all identified place field shifts are centered around 0.28m with no substantial amount of fields near 0.0m, showing their preference to encode the boundary-defined reference frame (Figure 20b). Intuitively, this is logical: the only way to encode the position in the global (or visual, when the projection is on) reference frame in darkness is to integrate the vestibular information about the arena translation and keep this information intact in relation to the arena borders. This would be unexpected, first, because the information about the passive move is normally not used by the animal to represent the local environment (see the results from vSHIFT - coherent), and second, because there is no clear evidence that path integrator can ever maintain absolute positional information during passive translations based on the vestibular inputs only.
 
-Likewise, the distribution of the place field shifts along the arena in light shows equivalence to the regular experimental sessions, having higher concentration of the visually-driven (shift 0m) place fields in the middle of the environment and higher concentration of the boundary-driven fields (shift 0.3m) near the boundaries. The distribution of the fields in darkness confirms absence of visually-driven cells, and additionally displays higher shift variance (not shown) for fields in the middle of the arena, pointing to a reduced precision of position encoding. As most of the cells in dark are driven by self-motion or boundary-defined cues, this could be taken as another light evidence of error accumulation by path integrator away from the reference point.
+Likewise, the distribution of the place field shifts along the arena in light shows equivalence to the regular experimental sessions, having higher concentration of the visually-driven (shift 0.0m) place fields in the middle of the environment and higher concentration of the boundary-driven fields (shift 0.3m) near the boundaries. The distribution of the fields in darkness confirms absence of visually-driven cells, and additionally displays higher shift variance (not shown) for fields in the middle of the arena, pointing to a reduced precision of position encoding. As most of the cells in dark are driven by self-motion or boundary-defined cues, this could be taken as another light evidence of error accumulation by path integrator away from the reference point.
 
 \begin{figure}
 \captionsetup{format=plain}
 \makebox[\textwidth]{\includegraphics[width=150mm]{figures/F20_light_versus_dark.png}}
-\caption[Light vs Dark]{
+\caption[Place fields in light and in dark]{
 Change in place field shift distribution for the vSHIFT-physical experiment between light and dark conditions. (a) Distribution of place field shifts in light. Similar to Figure 18a. (b) Distribution of place field shifts in the dark shows that most of the cells rely on path integration in absence of visual input (average shift near 0.3m). Distribution of the place fields of different types inside the arena in light (c) and in dark (d) confirms higher concentration of the visually-driven cells away from the arena boundaries (see next section).
 }
 \label{fig:F20_light_versus_dark}
@@ -206,15 +206,15 @@ Looking at the place field maps and visually analysing changes of the field loca
 \begin{figure}
 \captionsetup{format=plain}
 \makebox[\textwidth]{\includegraphics[width=150mm]{figures/F21_remapping_types.png}}
-\caption[Remapping types]{
+\caption[Remapping in darkness]{
 Different types of changes in place cell behavior after the lights are off. (a) An example place cell that goes fully silent in dark. (b) An example place cell with stable location and mean firing rate between light and dark condition shows independence of the visual reference frame. (c) An example cell showing preference for a particular visual part of the environment exposes complete remapping in dark.
 }
 \label{fig:F21_remapping_types}
 \end{figure}
 
-A bit more than a half of the population of fields goes to the stable group (see Figure 3.11a). Their stability might be due to these cells getting strong self-motion inputs that enable them to keep their stability in darkness. The unstable group, comprising partially stable (place field can’t be detected in both original and shifted positions in dark) and fully remapped fields, react by a significant amount of change to the loss of the visual input and the virtual reference frame. The contrast between the groups is of  particular interest for investigation relative to their shift preference, which could be attributed to the amount of allocentric and idiothetic information that drive their activity.
+A bit more than a half of the population of fields goes to the stable group (see Figure 3.11a). Their stability might be due to these cells getting strong self-motion inputs which do not reduce their sharpness (\cite{Allen2016}) and which enable them to keep their stability in darkness. The unstable group, comprising partially stable (place field can’t be detected in both original and shifted positions in dark) and fully remapped fields, react by a significant amount of change to the loss of the visual input and the virtual reference frame.  The contrast between the groups is of  particular interest for investigation relative to their shift preference, which could be attributed to the amount of allocentric and idiothetic information that drive their activity.
 
-The place field shift distribution for the stable group contains a substantial amount of field shifts centered at 0.15 and at 0.3, which correlates with the assumption that these fields are mostly self-motion / boundary-driven and the underlying place cells receive a strong input of information from the self-motion (see Figure 22a). In contrast, all cells in unstable groups are balanced towards 0m shift, having field shifts centered at 0m and 0.15m and less around 0.3m. This distribution could be explained by assuming that many place fields, driven by visual allocentric information (field shift around 0m), when they lose their main driving input, remap or go unstable, thus belong to unstable groups. The correlation between the amount of self-motion input and cell firing stability can be also illustrated by the normalized difference of these field shift distributions (see Figure 22e), which shows negative peak around 0m (unstable fields having 0m field shift) and positive around 0.3m (more stable field shifts near 0.3m), putatively separating the groups to mostly allocentric- and mostly idiothetic- driven units. Besides field shifts, there is no significant change in mean firing rates for the stable but not for the unstable groups, accordingly. The reduction in mean firing rate might be explained by the loss of visual inputs.
+The place field shift distribution for the stable group contains a substantial amount of field shifts centered at 0.15 and at 0.3, which correlates with the assumption that these fields are mostly self-motion / boundary-driven and the underlying place cells receive a strong input of information from the self-motion (see Figure 22a). In contrast, all cells in unstable groups are balanced towards 0.0m shift, having field shifts centered at 0.0m and 0.15m and less around 0.3m. This distribution could be explained by assuming that many place fields, driven by visual allocentric information (field shift around 0.0m), when they lose their main driving input, remap or go unstable, thus belong to unstable groups. The correlation between the amount of self-motion input and cell firing stability can be also illustrated by the normalized difference of these field shift distributions (see Figure 22e), which shows negative peak around 0.0m (unstable fields having 0.0m field shift) and positive around 0.3m (more stable field shifts near 0.3m), putatively separating the groups to mostly allocentric- and mostly idiothetic- driven units. Besides field shifts, there is no significant change in mean firing rates for the stable but not for the unstable groups, accordingly. The reduction in mean firing rate might be explained by the loss of visual inputs.
 
 \begin{figure}
 \captionsetup{format=plain}
@@ -225,16 +225,16 @@ The stability of the cell activity in darkness is correlated with the balance be
 \label{fig:F22_stable_unstable}
 \end{figure}
 
-More intriguing result shows up when analysing the change in place field shift distribution of the stable group between the light and dark conditions. The 0.3m boundary-driven group, assumed to be composed of units mostly driven by self-motion inputs, does not show any change in its shift preference (see Figure 23a, stars). The group of fields near 0m, putatively mostly driven by visual cues, loses their 0m shift preference ang gets a high variance (not shown). Importantly, the middle “multisensory” 0.15m unit group change their shift preference from encoding an average between self-motion and visually given distances (0.15m) to an average shift of 0.3m, indicating the visual input can no longer influence the path integrator for these units and these cells stay driven by the idiothetic inputs only.
+More intriguing result shows up when analysing the change in place field shift distribution of the stable group between the light and dark conditions. The 0.3m boundary-driven group, assumed to be composed of units mostly driven by self-motion inputs, does not show any change in its shift preference (see Figure 23a, stars). The group of fields near 0.0m, putatively mostly driven by visual cues, loses their 0.0m shift preference ang gets a high variance (not shown). Importantly, the middle “multisensory” 0.15m unit group change their shift preference from encoding an average between self-motion and visually given distances (0.15m) to an average shift of 0.3m, indicating the visual input can no longer influence the path integrator for these units and these cells stay driven by the idiothetic inputs only.
 
 Furthermore, the detailed analysis of the place field position shifts for the multisensory 0.15m unit group reveals that in both original and shifted conditions the shift is directed towards the middle between their corresponding place field locations in dark (see Figure 23b). To be more precise, in the original arena position the place field in light is “ahead” of its corresponding field in dark (when it’s self-motion driven only), as the same time for the shifted position the field is “behind” its corresponding field in dark. This direction of the shift is unique to the multisensory group as, for instance, this is not the case for the pure self-motion driven group of cells (see Figure 23c). Altogether this points to the special type of integration of visual with self-motion information. The possible underlying mechanisms are provided in the discussion.
 
-In summary, the change of the place cell firing in darkness confirms the different amount of visual- and self-motion inputs distributed among the 0m, 0.15m, and 0.3m shift groups. This suggests the continuous connection between the amount of influence of an allocentric input versus idiothetic inputs and a cell behavior in darkness, ranging from the remapping, if the cell is more visually-driven, to the stable place field in case the self-motion inputs are dominating. The substantial amount of units having 0.15m shift demonstrate the ability of the hippocampal circuitry to use weighted combination of inputs and represent places centered at the average between visual-landmark- and self-motion or boundary-defined distances.
+In summary, the change of the place cell firing in darkness confirms the different amount of visual- and self-motion inputs distributed among the 0.0m, 0.15m, and 0.3m shift groups. This suggests the continuous connection between the amount of influence of an allocentric input versus idiothetic inputs and a cell behavior in darkness, ranging from the remapping, if the cell is more visually-driven, to the stable place field in case the self-motion inputs are dominating. The substantial amount of units having 0.15m shift demonstrate the ability of the hippocampal circuitry to use weighted combination of inputs and represent places centered at the average between visual-landmark- and self-motion or boundary-defined distances.
 
 \begin{figure}
 \captionsetup{format=plain}
 \makebox[\textwidth]{\includegraphics[width=150mm]{figures/F23_shift_to_middle.png}}
-\caption[Shift to middle]{
+\caption[Weigthed combination of the inputs]{
 A detailed analysis of place field shifts of the multisensory cells shows the integration of the visual and the self-motion components as a weighted combination. (a) For the stable group, the plot shows place field shift in light versus shift in dark. For the 0.3m fields (stars) place field shift is not different between conditions showing their independence from the visual reference frame. Note that the 0.15m group (triangles) the shift in dark grows to 0.3m showing a switch to the purely self-motion based navigation. (b) Relative shifts in the same arena positions for the 0.15m group show that visual information calibrates the spatial representation towards the middle between the reference frames. For the 0.3m group (c) relative shifts in the same arena positions are not significant probably because of visual independance (right plot).
 }
 \label{fig:F23_shift_to_middle}
@@ -249,7 +249,7 @@ In the vSHIFT - physical experiment the distribution of place field sizes relati
 \begin{figure}
 \captionsetup{format=plain}
 \makebox[\textwidth]{\includegraphics[width=150mm]{figures/F24_field_sizes.png}}
-\caption[Fields sizes]{
+\caption[Position accuracy based on fields sizes]{
 The distribution of place field sizes inside the arena. All place fields (left plot) and two groups of self-motion (middle) and visually (right plot) driven fields, classified as in vSHIFT -physical. Smaller sizes of place fields near the boundaries suggest higher quality of spatial orientation.
 }
 \label{fig:F24_field_sizes}
@@ -261,12 +261,12 @@ The distribution of place field sizes inside the arena. All place fields (left p
 
 In order to verify whether the information about the passive move during arena translation and the propagation of this information to the brain circuits through vestibular system is required for the successful encoding of either of the visual- or boundary- reference frames, we conducted visual shift experiment (vSHIFT - visual, Figure 25a). The protocol for the visual shift experiment was exactly matching the physical shift experiment, with the only difference that instead of the arena move for 0.3m, the visual projection was moved 0.3m keeping the same speed, such that from inside the arena the only possibility to distinguish whether the physical arena or the virtual projection is moved is to attend to the vestibular system informing about the start and the end of the passive move, or possibly to the tactile receptors informing about the vibrations during the physical arena move (Figure 25a).
 
-In total 209 place fields were recorded in visual shift condition. Analysis of the place field shift distribution demonstrates presence of field shifts around 0m, 0.15m and 0.3m, showing the ability to use both visual and boundary defined reference frames for position encoding (see Figure 3.13c). High concentration of field shift in the middle of the distribution near 0.15m confirms the tendency of the hippocampal cells to encode the location centered at average between the visual and boundary defined estimates, similar to the physical arena shift condition. The comparison of the place field shift probability distributions between the physical and visual experiments (Figure 25d) demonstrates that even without the vestibular or tactile information about the passive move the visual information alone, when stable for at least 30s periods of time, can influence the positioning of the place fields and overall has very similar impact on formation of the hippocampal place code.
+In total 209 place fields were recorded in visual shift condition. Analysis of the place field shift distribution demonstrates presence of field shifts around 0.0m, 0.15m and 0.3m, showing the ability to use both visual and boundary defined reference frames for position encoding (see Figure 3.13c). High concentration of field shift in the middle of the distribution near 0.15m confirms the tendency of the hippocampal cells to encode the location centered at average between the visual and boundary defined estimates, similar to the physical arena shift condition. The comparison of the place field shift probability distributions between the physical and visual experiments (Figure 25d) demonstrates that even without the vestibular or tactile information about the passive move the visual information alone, when stable for at least 30s periods of time, can influence the positioning of the place fields and overall has very similar impact on formation of the hippocampal place code.
 
 \begin{figure}
 \captionsetup{format=plain}
 \makebox[\textwidth]{\includegraphics[width=150mm]{figures/F25_visual_equals_physical.png}}
-\caption[Visual shift analysis]{
+\caption[Visual shift induces sensory conflict]{
 vSHIFT-visual. (a) Schematic of the experimental protocol. (b) Example place cell spiking (top) and firing rate maps (bottom) for original, shifted and dark conditions. (c) Distribution of place field shifts is similar to the vSHIFT-physical experiment. (d) Same as in the vSHIFT-physical, there is a higher concentration of the visually-driven fields in the center of the arena, confirming the tendency to rely on the more available reference frame at the population level. (e) Comparison of normalized place field shift distributions between physical (arena moves) and visual (projection moves) types of experiments. (f) A substantial (90.2\%) amount of cells continue to be active in the dark showing widespread integration of the self-motion component.
 }
 \label{fig:F25_visual_equals_physical}
@@ -281,7 +281,7 @@ Similar to the vSHIFT-physical, for several sessions in vSHIFT-visual we recorde
 \begin{figure}
 \captionsetup{format=plain}
 \makebox[\textwidth]{\includegraphics[width=110mm]{figures/F26_recalibration.png}}
-\caption[Recalibration]{
+\caption[Recalibration of the self-motion map]{
 Visual conflict induces recalibration of the idiothetic self-motion based place map. (a) Distribution of the place field shift in light (A -> B) shows the influence of the conflicting visual reference frame and suggests encoding in a weighted combination manner. (b) a very little place field shift back after the lights are off (non-significant) shows that the overall spatial representation was recalibrated during conflicting condition. (c) Direct comparison of original (A) and dark (D) conditions confirms the recalibration of the spatial map as in (b). (d) A correlation between the field shift in light (e.g. its dependency on vision) and the resulting shift of the field (A -> Dark) demonstrates the connection between the amount of visual input and its influence on recalibration.
 }
 \label{fig:F26_recalibration}
@@ -300,7 +300,7 @@ To further investigate the change in spatial selectivity of hippocampal cells in
 \begin{figure}
 \captionsetup{format=plain}
 \makebox[\textwidth]{\includegraphics[width=150mm]{figures/F27_gain_12x.png}}
-\caption[Gain 1.2x]{
+\caption[Sensory integration in gradual mismatch in vGAIN 1.2x]{
 vGAIN 1.2x experiment. (a) An example place cell with a field active in all conditions. The gradual shift of the field along the shift of the visual reference frame (north -> south) shows influence of visual objects and cues. (b) Place field shifts between no-gain (A) and gain (B) conditions plotted against  the position in the arena. Dashed lines indicate the amount of conflict between visual and boundary-defined reference frames (100\% reflects the amount of conflict at the Y-axis). Note neurons encode the weighted average between two reference frames (blue linear regression bar), that linearly grows with the amount of conflict, on the population level.
 }
 \label{fig:F27_gain_12x}
@@ -321,7 +321,7 @@ Similar to the vGAIN 1.2x, the first, exploratory phase, followed by a gain cond
 \begin{figure}
 \captionsetup{format=plain}
 \makebox[\textwidth]{\includegraphics[width=150mm]{figures/F28_gain_14x.png}}
-\caption[Gain 1.4x]{
+\caption[Sensory alternation in gradual mismatch in vGAIN 1.4x]{
 vGAIN 1.4x and analysis of GAIN experiments. (a) An example place cell with a field active in all conditions. The gradual shift of the field along the shift of the visual reference frame (north -> south) shows influence of visual objects and cues. Note that in contrast to the gain 1.2x condition, a field is no longer influenced by vision when conflict is too large (B -> C). (b) Place field shifts between no-gain (A) and gain (B) conditions plotted against  the position in the arena. Dashed lines indicate the amount of conflict between visual and boundary-defined reference frames (100\% reflects the amount of conflict at the Y-axis). Note neurons encode the weighted average between two reference frames (blue linear regression bar), that linearly grows with the amount of conflict, until the conflict does not exceed ~0.4m. At larger conflicts > 0.4m there is a significant drop in the fraction of cells influenced by the visual reference frame. (c) Distribution of place field shifts for no gain (A) - gain (B) and gain (B) - no gain shifted (C) conditions shows continuous influence of the visual reference frame at smaller conflicts, similar to the vSHIFT experiment (top row, left and middle). A small shift back after the lights are off (top right plot) shows the overall recalibration of the spatial map between original and shifted conditions, similar to vSHIFT - visual. In contrast, the initial influence of the visual reference frame (bottom left) stops when the conflict becomes too large (bottom middle).
 }
 \label{fig:F28_gain_14x}
