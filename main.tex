@@ -1,8 +1,6 @@
 %template taken from University of Bonn Master of Life Science Informatics
 % arara: pdflatex: { synctex: on }
 
-
-
 \documentclass[twoside, 12pt,  footinclude=true, headinclude=true, cleardoublepage=empty]{scrbook}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
@@ -16,35 +14,31 @@ url=false
 ]{biblatex}
 \addbibresource{references.bib}
 
-\usepackage{lipsum}
-\usepackage[linedheaders,parts,pdfspacing]{classicthesis}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{booktabs}
+%\usepackage{lipsum}
+\usepackage[linedheaders,parts,pdfspacing,dottedtoc]{classicthesis}
+%\usepackage{amsmath}
+%\usepackage{amsthm}
+%\usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage{float}
-\usepackage{indentfirst}
-\usepackage[T1]{fontenc}
-\usepackage{listings}
-\usepackage{color}
-\usepackage{multirow}
-\usepackage{tikz}
+% \usepackage{indentfirst}
+% \usepackage[T1]{fontenc}
+% \usepackage{listings}  % for source code output
+% \usepackage{color}
+\usepackage{scrhack}
+% \usepackage{multirow}
+% \usepackage{tikz}
 \usepackage[toc,page]{appendix}
 \usepackage{MnSymbol}
 \usepackage{longtable}
-%\usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{mathtools}
 \usepackage{enumerate}
 \usepackage{csquotes}
-\usepackage{amsmath}
-%\usepackage{hyperref}
-\usepackage{acro}
+% %\usepackage{hyperref}
+% \usepackage{acro}
 \usepackage[a4paper,includeall,bindingoffset=20mm,margin=2cm,marginparsep=0cm,marginparwidth=0cm]{geometry}
 \usepackage[font={footnotesize,it}, labelfont=bf]{caption}
-
-% \usepackage{tocloft}
-% \renewcommand\cftchapdotsep{\cftdotsep}
 
 
 \setlength{\parskip}{1em}
@@ -52,6 +46,7 @@ url=false
 \title{PhD Thesis}
 \author{Andrey Sobolev}
 \date{\today}
+
 \begin{document}
 
 
@@ -107,9 +102,6 @@ url=false
 
 \chapter{Acknowledgments}
 
-\begingroup
-\setlength{\parskip}{1em}
-
 I would like to sincerely thank my supervisors Prof. Dr. Anton Sirota, Prof. Dr. Christian Leibold and Dr. Kay Thurley for hosting me in the lab, providing help and support for scientific and technical questions. I'd like to thank Dr. Dustin Fetterhoff for his contribution with the recorded data to the project. I'd like to thank Dr. Steffen Katzner for his valuable comments on the project during TAC meetings.
 
 I want to thank the Graduate School of Systemic Neurosciences, led by Prof. Dr. Benedikt Grothe for providing a beautiful and productive atmosphere for students, suitable for networking and discussions.
@@ -118,7 +110,6 @@ I would like to specially thank Prof. Dr. Thomas Wachtler, my former supervisor 
 
 My thanks for the great support from my lab, in particular - Dr. Evgeny Resnik, Fabian Stocek, Dr, Andreas Genewsky, Dr. Elena Itchcovich for their help during surgical procedures, animal handling, data acquisition and analysis.
 
-\endgroup
 
 
 \tableofcontents
