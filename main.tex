@@ -1,18 +1,27 @@
 %template taken from University of Bonn Master of Life Science Informatics
-% arara: pdflatex: { synctex: on }
+% to compile do: pdflatex main.tex
 
-\documentclass[twoside, 12pt,  footinclude=true, headinclude=true, cleardoublepage=empty]{scrbook}
+\documentclass[
+	twoside,
+	12pt,
+	footinclude=true,
+	headinclude=true,
+	cleardoublepage=empty
+]{scrbook}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 
 \usepackage[
-backend=biber,
-%style=alphabetic,
-style=numeric,
-citestyle=authoryear,
-url=false
+	backend=biber,
+	style=numeric,
+	citestyle=authoryear,
+	url=false
 ]{biblatex}
 \addbibresource{references.bib}
+\setlength{\parskip}{1em}
+\title{PhD Thesis}
+\author{Andrey Sobolev}
+\date{\today}
 
 %\usepackage{lipsum}
 \usepackage[linedheaders,parts,pdfspacing,dottedtoc]{classicthesis}
@@ -35,87 +44,33 @@ url=false
 \usepackage{mathtools}
 \usepackage{enumerate}
 \usepackage{csquotes}
-% %\usepackage{hyperref}
-% \usepackage{acro}
-\usepackage[a4paper,includeall,bindingoffset=20mm,margin=2cm,marginparsep=0cm,marginparwidth=0cm]{geometry}
+\usepackage{amsmath}
+%\usepackage{hyperref}
+\usepackage{acro}
+\usepackage[
+	a4paper,
+	includeall,
+	bindingoffset=20mm,
+	margin=2cm,
+	marginparsep=0cm,
+	marginparwidth=0cm
+]{geometry}
 \usepackage[font={footnotesize,it}, labelfont=bf]{caption}
 
 
-\setlength{\parskip}{1em}
-
-\title{PhD Thesis}
-\author{Andrey Sobolev}
-\date{\today}
-
 \begin{document}
-
-
-\begin{titlepage}
-	\centering
-
-	%\vspace{1in}
-
-    \noindent\rule{15cm}{0.4pt}
-    {\linespread{1.5}{\Huge Contribution of the idiothetic and the allothetic information to the hippocampal place code\par}}
-    \noindent\rule{15cm}{0.4pt}
-
-	{\LARGE \bfseries Andrey Sobolev}
-
-    \includegraphics[width=120mm]{assets/gsn.jpg}
-
-    \includegraphics[width=50mm]{assets/lmu-logo.png}
-
-    Dissertation at the
-    Graduate School of Systemic Neurosciences
-    Ludwig‐Maximilians‐Universität München
-
-    December, 2020
-
-    % ---------------------------
-    \vfill
-
-	\begin{flushleft}
-	{\large Supervisor:}
-
-	{\LARGE Prof. Dr. Anton Sirota\par}
-    Cognition and Neural Plasticity\\
-    Department Biology II\\
-    Ludwig-Maximilians-Universität München\\
-    Großhaderner Straße 2\\
-    82152 Planegg-Martinsried
-
-	\vspace{1in}
-
-	{\large First Reviewer:   \bfseries Prof. Dr. Anton Sirota\par}
-	{\large Second Reviewer:  \bfseries Prof. Dr. Christian Leibold\par}
-	{\large External Reviewer:\par}
-
-    \vspace{1in}
-	{\large Date of submission: \today\par}
-	\end{flushleft}
-
-\end{titlepage}
 
 %	% Add blank page
 %	\newpage
 %	\thispagestyle{empty}
 %	\mbox{}
 
-% /frontmatter -> Turn on roman numbering for the following content and turns off normal numbering
+\include{title}
 
+% Turn on roman numbering
 \frontmatter
 
-\chapter{Acknowledgments}
-
-I would like to sincerely thank my supervisors Prof. Dr. Anton Sirota, Prof. Dr. Christian Leibold and Dr. Kay Thurley for hosting me in the lab, providing help and support for scientific and technical questions. I'd like to thank Dr. Dustin Fetterhoff for his contribution with the recorded data to the project. I'd like to thank Dr. Steffen Katzner for his valuable comments on the project during TAC meetings.
-
-I want to thank the Graduate School of Systemic Neurosciences, led by Prof. Dr. Benedikt Grothe for providing a beautiful and productive atmosphere for students, suitable for networking and discussions.
-
-I would like to specially thank Prof. Dr. Thomas Wachtler, my former supervisor in the German Neuroinformatics Node (G-Node), who supported me in acquiring technical and physiological knowledge required for the current research, during the years of working together in G-Node.
-
-My thanks for the great support from my lab, in particular - Dr. Evgeny Resnik, Fabian Stocek, Dr, Andreas Genewsky, Dr. Elena Itchcovich for their help during surgical procedures, animal handling, data acquisition and analysis.
-
-And of course, thanks a million to my Family, without it this could not be done.
+\include{acknowledgements}
 
 \tableofcontents
 
@@ -125,6 +80,7 @@ And of course, thanks a million to my Family, without it this could not be done.
 
 \include{abstract}
 
+% Turn on normal numbering
 \mainmatter
 
 \include{intro}
